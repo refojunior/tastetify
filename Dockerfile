@@ -40,6 +40,8 @@ RUN apt-get install -y unzip && \
     docker-php-ext-enable zip && \
     docker-php-ext-enable mysqli
 
+RUN apt-get install -y npm
+
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www-data www
 
