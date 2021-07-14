@@ -20,6 +20,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'spotify_avatar',
+        'spotify_id',
+        'spotify_url',
+        'spotify_followers',
+        'spotify_type',
+        'spotify_token',
+        'spotify_refresh_token',
+        'spotify_country',
+        'spotify_product',
     ];
 
     /**

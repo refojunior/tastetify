@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/login', [\App\Http\Controllers\HomeController::class, 'login']);
+Route::get('/spotify', [\App\Http\Controllers\HomeController::class, 'spotify']);
+
+Route::post('/logout', [\App\Http\Controllers\HomeController::class, 'logout']);
 
 Route::resource('/posts', \App\Http\Controllers\PostController::class);

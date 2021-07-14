@@ -11,17 +11,7 @@
             <li class="nav-item">
               <inertia-link class="nav-link" href="/posts/">POSTS</inertia-link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://santrikoding.com/ebook" target="_blank">EBOOK</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://santrikoding.com/tutorial-set" target="_blank">TUTORIAL SET</a>
-            </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
