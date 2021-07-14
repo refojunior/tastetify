@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container">
-        <inertia-link class="navbar-brand" href="/">LARAVEL + INERTIA.JS</inertia-link>
+        <inertia-link class="navbar-brand" href="/">TASTETIFY</inertia-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,15 +16,22 @@
       </div>
     </nav>
     
-    <main class="container mt-5">
+    <main>
       <slot />
     </main>
+    
+    <Footer />
+    
   </div>
 </template>
 
 <script>
-  export default {
+  import Footer from '../Components/Footer.vue'
 
+  export default {
+    components: {
+      Footer,
+    }
   }
 </script>
 

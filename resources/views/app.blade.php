@@ -7,11 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>{{ $page['props']['title'] ?? 'Hello World' }}</title>
     <script src="{{ mix('/js/app.js') }}" defer></script>
-    <style>
-      body {
-        background-color: lightgray
-      }
-    </style>
+  
   </head>
   <body>
       @inertia
