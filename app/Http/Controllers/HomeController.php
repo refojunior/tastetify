@@ -20,6 +20,9 @@ class HomeController extends Controller
     }
 
     public function login() {
+        if(Auth::check()){
+            return redirect('/generator');
+        }
         
         $scopes = 'user-read-private user-read-email user-top-read user-read-recently-played playlist-read-private';
         $redirect_uri = url('/').env('SPOTIFY_REDIRECT_URI');
@@ -46,8 +49,8 @@ class HomeController extends Controller
             ['spotify_id' => $user['id']],
             [
                 'name' => $user['display_name'],
+                'email' => $user['email'],
                 'spotify_avatar' => $user['images'][0]['url'],
-                'spotify_email' => $user['email'],
                 'spotify_url' => $user['external_urls']['spotify'],
                 'spotify_followers' => $user['followers']['total'],
                 'spotify_type' => $user['type'],
@@ -66,7 +69,7 @@ class HomeController extends Controller
 
         // dd($recently_played);
 
-        return redirect('/');
+        return redirect('/generator');
     }
 
     public function logout(){

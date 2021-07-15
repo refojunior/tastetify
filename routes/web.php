@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/login', [\App\Http\Controllers\HomeController::class, 'login']);
 Route::get('/spotify', [\App\Http\Controllers\HomeController::class, 'spotify']);
+
+//generator
+Route::get('/generator', [\App\Http\Controllers\GeneratorController::class, 'generate'])->middleware('auth');
+Route::post('/generator', [\App\Http\Controllers\GeneratorController::class, 'doGenerate'])->middleware('auth');
 
 Route::post('/logout', [\App\Http\Controllers\HomeController::class, 'logout']);
 
