@@ -24,7 +24,7 @@ class HomeController extends Controller
             return redirect('/generator');
         }
         
-        $scopes = 'user-read-private user-read-email user-top-read user-read-recently-played playlist-read-private';
+        $scopes = 'user-read-private user-read-email user-top-read user-read-recently-played';
         $redirect_uri = url('/').env('SPOTIFY_REDIRECT_URI');
      
         return redirect('https://accounts.spotify.com/authorize?response_type=code&client_id='.env('SPOTIFY_CLIENT_ID').'&scope='.urlencode($scopes).'&redirect_uri='.$redirect_uri);    
@@ -44,9 +44,20 @@ class HomeController extends Controller
         $user = Http::withHeaders([
             'Authorization' => 'Bearer '. $activate['access_token'],
         ])->get('https://api.spotify.com/v1/me')->json();
+        
+        if(isset($user['error'])){
+            dd($user);
+        }
+
+        if(!isset($user['id'])){
+            $user_id = explode('users/', $user['href']);
+            $spotify_id = $user_id[1];
+        } else {
+            $spotify_id = $user['id'];
+        }
 
         $spotify = User::updateOrCreate(
-            ['spotify_id' => $user['id']],
+            ['spotify_id' => $spotify_id],
             [
                 'name' => $user['display_name'],
                 'email' => $user['email'],
