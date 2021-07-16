@@ -59,12 +59,13 @@ export default {
     setup(){
         function generateContent(time_range){
             if(time_range == ''){
-                alert('Select the time frame first')                
+                alert('Select the time frame first')
+            } else {
+                Inertia.post('/generator', {
+                    time_range: time_range,                
+                })
             }
 
-            Inertia.post('/generator', {
-                time_range: time_range,                
-            })
         }
 
         return {

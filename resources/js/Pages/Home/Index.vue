@@ -1,8 +1,26 @@
 <template>
     <div>
-        <Banner />
+        <Banner :user="user" />
 
         <div class="container">
+            <div class="row section-start">
+                <div class="col-md-12 text-center">
+                    <h1>What We Have</h1>
+                    <p>We have some tools that you can use to:</p>
+
+                    <div class="row inner-content">
+                        <div class="col-md-4">
+                            Generate menu with your music
+                        </div>
+                        <div class="col-md-4">
+                            Find your best tracks
+                        </div>
+                        <div class="col-md-4">
+                            Find your top played artists
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row pt-5 pb-5">
                 <div class="col-md-12">
                     <h1>How to use it?</h1>
@@ -41,5 +59,15 @@
 <style scoped>
 .custom-list {
     line-height: 2em;
+}
+
+.section-start {
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+
+.inner-content {
+    padding-top: 5em;
+    padding-bottom: 5em;
 }
 </style>

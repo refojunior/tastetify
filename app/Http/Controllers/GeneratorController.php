@@ -87,7 +87,7 @@ class GeneratorController extends Controller
         $duration = str_replace('.', ':', $duration);
         $length = strlen($duration);
         if($length == 1){
-            return $duration.':00';
+            return $duration . ':00';
         }
 
         if($length == 3) {

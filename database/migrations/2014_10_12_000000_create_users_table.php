@@ -26,8 +26,8 @@ class CreateUsersTable extends Migration
             $table->bigInteger('spotify_followers')->nullable();
             $table->text('spotify_token');
             $table->text('spotify_refresh_token');
-            $table->string('spotify_country');
-            $table->string('spotify_product');
+            $table->string('spotify_country')->nullable();
+            $table->string('spotify_product')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

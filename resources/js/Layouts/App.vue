@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
       <div class="container">
         <inertia-link class="navbar-brand" href="/">Tastetify</inertia-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,5 +61,12 @@
 <style scoped>
     .mt-5 {
       margin-top: 100px!important;
+    }
+
+    .custom-navbar {
+      background-color: #0507089e!important;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      box-shadow: 0px 0px 7px 0px rgb(0 0 0 / 55%);
     }
 </style>
