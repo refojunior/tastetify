@@ -59,16 +59,16 @@ class HomeController extends Controller
         $spotify = User::updateOrCreate(
             ['spotify_id' => $spotify_id],
             [
-                'name' => $user['display_name'],
-                'email' => $user['email'],
-                'spotify_avatar' => $user['images'][0]['url'],
-                'spotify_url' => $user['external_urls']['spotify'],
-                'spotify_followers' => $user['followers']['total'],
-                'spotify_type' => $user['type'],
+                'name' => $user['display_name'] ?? null,
+                'email' => $user['email'] ?? null,
+                'spotify_avatar' => $user['images'][0]['url'] ?? null,
+                'spotify_url' => $user['external_urls']['spotify'] ?? null,
+                'spotify_followers' => $user['followers']['total'] ?? null,
+                'spotify_type' => $user['type'] ?? null,
                 'spotify_token' => $activate['access_token'],
                 'spotify_refresh_token' => $activate['refresh_token'],
-                'spotify_country' => $user['country'],
-                'spotify_product' => $user['product'],
+                'spotify_country' => $user['country'] ?? null,
+                'spotify_product' => $user['product'] ?? null,
             ]
         );
         
