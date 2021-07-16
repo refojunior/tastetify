@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div v-if="content" class="content" id="capture">
+        <div v-if="content" class="content-loading"></div>
+        <div v-if="content" class="content" ref="screenshot" id="capture">
             <div class="header">
                 <h1 class="title">Tastetify</h1>
                 <span>{{ time_frame }} Best Menu by {{ user.name }}</span>
@@ -30,11 +31,18 @@
             </div>
         </div>
 
-        <div id="canvasRendered"></div>
+        <div class="html2canvas-container text-center">
+            <div id="canvasRendered"></div>
+            <a download="" href="" class="btn btn-outline-primary mt-3 download" id="download">Save as image</a>
+        </div>
+
     </div>
 </template>
 
 <script>
+
+
+import html2canvas from 'html2canvas'
 
 export default {
     props: {
@@ -47,28 +55,45 @@ export default {
         return {
             output: null,
             content: true,
+            imageUrl: 'https://cdn.glitch.com/4c9ebeb9-8b9a-4adc-ad0a-238d9ae00bb5%2Fmdn_logo-only_color.svg?1535749917189', // cross-domain address
+		    screenshotImage: ''
         }
     },
     methods: {
-        screenshot(){
-            const html2canvas = require('html2canvas');
-            html2canvas(document.getElementById('capture'), {
-                allowTaint: true
-            }).then(function(canvas){
-                document.getElementById('canvasRendered').append(canvas)
-                
-            });
+        async screenshot() {            
+            const opts = {
+                useCORS: true
+            }
+            const el = this.$refs.screenshot
+            const canvas = await html2canvas(el, opts)
+            
+            this.screenshotImage = canvas.toDataURL('image/jpg')
             this.content = false
+            document.getElementById('canvasRendered').append(canvas)
+            let download_btn = document.getElementById('download')
+            download_btn.setAttribute('href', canvas.toDataURL())
+            download_btn.setAttribute('download', 'Tastetify.png')
         }
+
     },
     mounted() {
-        //this.print()
         this.screenshot()
     }
 }
 </script>
 
 <style scoped>
+.content-loading {
+    width: 100%;
+    height: 100%;
+    background-color: #F1F2F3;
+    position: fixed;
+    z-index: 2;
+    background-image: url('/img/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .header {
     margin-bottom: 0;
 }

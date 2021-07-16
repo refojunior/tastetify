@@ -57,17 +57,5 @@
 </script>
 
 <style scoped>
-.custom-list {
-    line-height: 2em;
-}
 
-.section-start {
-    padding-top: 10em;
-    padding-bottom: 10em;
-}
-
-.inner-content {
-    padding-top: 5em;
-    padding-bottom: 5em;
-}
 </style>

@@ -1,9 +1,9 @@
 <template>
-    <div class="px-4 my-5 pt-5">
-        <div class="container">
+    <div class="px-4">
+        <div class="container section-start">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">Generate your own menu</h1>
+                    <h1 class="text-center">Generate Your Own Menu</h1>
                     <hr>
                 </div>
                 <div class="col-md-12 text-center">
