@@ -55,8 +55,7 @@ export default {
         return {
             output: null,
             content: true,
-            imageUrl: 'https://cdn.glitch.com/4c9ebeb9-8b9a-4adc-ad0a-238d9ae00bb5%2Fmdn_logo-only_color.svg?1535749917189', // cross-domain address
-		    screenshotImage: ''
+            screenshotImage: ''
         }
     },
     methods: {
@@ -83,16 +82,6 @@ export default {
 </script>
 
 <style scoped>
-.content-loading {
-    width: 100%;
-    height: 100%;
-    background-color: #F1F2F3;
-    position: fixed;
-    z-index: 2;
-    background-image: url('/img/loading.gif');
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
 .header {
     margin-bottom: 0;
@@ -160,9 +149,5 @@ p.footer {
     font-size: 12px;
 }
 
-#canvasRendered {
-    margin: 20px auto;
-    text-align: center;
-}
 
 </style>

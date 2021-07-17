@@ -48,13 +48,8 @@ class HomeController extends Controller
         if(isset($user['error'])){
             dd($user);
         }
-
-        if(!isset($user['id'])){
-            $user_id = explode('users/', $user['href']);
-            $spotify_id = $user_id[1];
-        } else {
-            $spotify_id = $user['id'];
-        }
+        
+        $spotify_id = $user['id'];
 
         $spotify = User::updateOrCreate(
             ['spotify_id' => $spotify_id],
@@ -72,7 +67,7 @@ class HomeController extends Controller
             ]
         );
         
-        Auth::login($spotify, true);
+        Auth::login($spotify);
 
         // $recently_played = Http::withHeaders([
         //     'Authorization' => 'Bearer '.$spotify->spotify_token,

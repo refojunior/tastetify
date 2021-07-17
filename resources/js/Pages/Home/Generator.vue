@@ -25,13 +25,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mt-5"></div>
+                    <h4>Choose your template:</h4>
+                    <div class="row mt-5">
+                        <div class="col-4">
+                            <div class="boxes" :class="{focus:template == 'template_1'}" @click="selectTemplate('template_1')">
+                                <span>Template 1</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="boxes" :class="{focus:template == 'template_2'}" @click="selectTemplate('template_2')">
+                                <span>Template 2</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="boxes" :class="{focus:template == 'template_3'}" @click="selectTemplate('template_3')">
+                                <span>Template 3</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>                
             </div>
 
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <button @click.prevent="generateContent(time_range)" class="btn btn-primary">Start Generate</button>
+                        <button @click.prevent="generateContent(time_range, template)" class="btn btn-primary">Start Generate</button>
                     </div>
                 </div>
             </div>
@@ -48,21 +67,29 @@ export default {
     data() {
         return {
             time_range: '',
+            template: '',
         }
         
     },
     methods: {
         selectTimeRange: function (value){
             this.time_range = value
+        },
+        selectTemplate: function(value){
+            this.template = value
         }
     },
     setup(){
-        function generateContent(time_range){
+        function generateContent(time_range, template){
             if(time_range == ''){
                 alert('Select the time frame first')
+            } else if(template == ''){
+                alert('Select select your template')
             } else {
+                //console.log(time_range + " " + template)
                 Inertia.post('/generator', {
-                    time_range: time_range,                
+                    time_range: time_range,
+                    template: template,
                 })
             }
 

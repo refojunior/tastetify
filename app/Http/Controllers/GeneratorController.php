@@ -21,6 +21,7 @@ class GeneratorController extends Controller
 
     public function doGenerate(Request $request)
     {
+        
         $user = Auth::user();
 
         $spotify = Http::withHeaders([
@@ -70,16 +71,28 @@ class GeneratorController extends Controller
             }
         }
 
-        if(count($images) > 3) {
-            $images = array_slice($images, 0, 3);
+        if($request->template == 'template_1') {
+            if(count($images) > 3) {
+                $images = array_slice($images, 0, 3);
+            }
+    
+            return Inertia::render('Home/Templates/Template1', [
+                'user' => $user,
+                'tracks' => $formatted,
+                'images' => $images,
+                'time_frame' => $time_frame,
+            ]);
         }
 
-        return Inertia::render('Home/Finalize', [
-            'user' => $user,
-            'tracks' => $formatted,
-            'images' => $images,
-            'time_frame' => $time_frame,
-        ]);
+        if($request->template == 'template_2') {
+            return Inertia::render('Home/Templates/Template2', [
+                'user' => $user,
+                'tracks' => $formatted,
+                'images' => $images,
+                'time_frame' => $time_frame,
+            ]);
+        }
+
     }
 
     public function formatDuration($duration)
