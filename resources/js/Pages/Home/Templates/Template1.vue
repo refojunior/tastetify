@@ -79,10 +79,10 @@ export default {
         }
 
     },
-    mounted() {
+    async mounted() {
         setTimeout(() => {
             this.screenshot();
-        }, 1000);
+        }, 500)
     }
 }
 </script>
@@ -155,9 +155,13 @@ p.footer {
     font-size: 12px;
 }
 
-.canvas-content {
-    padding: 25px;
+.html2canvas-container {
+    margin: 0 auto;
+    max-width: 385px;
+    padding: 15px;
+    width: 100%;
 }
+
 .canvas-content img {
     width: 88%;
     margin: auto;

@@ -1,7 +1,7 @@
 <template>
     <div class="template-2 overflow-hidden">
         <div>
-            <div v-if="content" class="content-loading"></div>
+            <!-- <div v-if="content" class="content-loading"></div> -->
         </div>
         <div class="container-box" v-if="content" ref="screenshot" id="capture">
             <div class="p-3">
@@ -146,10 +146,11 @@ export default {
             download(this.screenshotImage, 'Testetify', 'image/png');
         }
     },
-    async mounted(){
+    async mounted(){           
         setTimeout(() => {
             this.screenshot()
-        }, 500);
+        }, 500)
+        
     }
 }
 </script>
@@ -159,6 +160,7 @@ h1.title {
     font-family: "Chomsky";
     font-size: 59px;
     color: #444444;
+    white-space: nowrap;
 }
 h2 {
     font-family: "Bitter";
