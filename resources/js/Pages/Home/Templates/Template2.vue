@@ -57,7 +57,7 @@
                     <div class="col-6">
                         <ul>
                             <li v-for="(track, index) in tracks" :key="index">
-                                <div class="d-flex justify-content-between" :class="[index < 4 ? 'd-none' : '']">
+                                <div class="d-flex justify-content-between" :class="[index < 5 ? 'd-none' : '']">
                                     <div class="track">
                                         {{ track.title }} <span class="artist">by {{ track.artists }}</span>
                                     </div>
