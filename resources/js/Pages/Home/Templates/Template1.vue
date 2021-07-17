@@ -35,6 +35,7 @@
             <div class="canvas-content">
                 <img :src="screenshotImage" class="img img-fluid d-block" >
                 <a @click.prevent="downloadImage" class="btn btn-outline-primary mt-3 download" id="download">Save as image</a>
+                <inertia-link href="/generator" class="d-block mt-2 link">Go back</inertia-link>
             </div>
         </div>
 

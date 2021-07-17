@@ -2,19 +2,19 @@
   <div class="page">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
       <div class="container">
-        <inertia-link class="navbar-brand" href="/">Tastetify</inertia-link>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <inertia-link class="navbar-brand" href="/" @click.prevent="menuToggle()">Tastetify</inertia-link>
+        <button class="navbar-toggler" type="button" @click.prevent="menuToggle()" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse" :class="[menuOpen == false ? 'd-none' : 'd-block']" id="navbarCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item">
 
-              <inertia-link  v-if="user.length != 0" class="nav-link" href="/generator">Generate Your Menu</inertia-link>
+              <inertia-link  v-if="user.length != 0" class="nav-link" href="/generator" @click.prevent="menuToggle();">Generate Your Menu</inertia-link>
               <a class="nav-link" href="/generator" v-else>Generate Your Menu</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"  v-if="user.length != 0" @click.prevent="logout()">Logout</a>
+              <a href="#" class="nav-link"  v-if="user.length != 0" @click.prevent="logout(); menuToggle()">Logout</a>
             </li>
           </ul>
         </div>
@@ -45,6 +45,16 @@
       Footer,
       Alert,
     },
+    data() {
+      return {
+        menuOpen: false
+      }
+    },
+    methods: {
+      menuToggle(){
+        return this.menuOpen = !this.menuOpen
+      }
+    },
     setup() {
         function logout(){
             Inertia.post('/logout')
@@ -53,7 +63,7 @@
         return {
             logout
         }
-    },
+    }
     
   }
 </script>

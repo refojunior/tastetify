@@ -52,16 +52,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid" style="background-color:#e7e7e7">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center pt-3 pb-3">
-                        <p class="mb-0">&copy; Copyright by Styles77</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -87,7 +77,7 @@
         background-image: url(/img/bg.png);
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: right;    
+        background-position: right;
     }
     .service img {
         max-width: 240px;

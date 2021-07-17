@@ -37,4 +37,11 @@ export default {
         padding-top: 15rem;
         padding-bottom: 15rem;
     }
+
+    @media screen and (max-width: 767px) {
+        .banner {
+            padding: 0;
+            margin-top: 128px;
+        }
+    }
 </style>
