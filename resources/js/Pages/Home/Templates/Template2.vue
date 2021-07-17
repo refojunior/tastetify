@@ -1,9 +1,9 @@
 <template>
     <div class="template-2 overflow-hidden">
         <div>
-            <div v-if="content" class="content-loading"></div>
+            <!-- <div v-if="content" class="content-loading"></div> -->
         </div>
-        <div class="container-box" v-if="content" ref="screenshot" id="capture">
+        <div class="container-box" ref="screenshot" id="capture">
             <div class="p-3">
                 <div class="header-content">
                     <h1 class="title mb-0">The tastetify News</h1>
@@ -161,6 +161,7 @@ h1.title {
     font-size: 59px;
     color: #444444;
     white-space: nowrap;
+    letter-spacing: -0.2px!important;
 }
 h2 {
     font-family: "Bitter";
