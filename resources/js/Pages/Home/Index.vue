@@ -10,32 +10,57 @@
 
                     <div class="row inner-content">
                         <div class="col-md-4">
-                            Generate menu with your music
+                            <div class="service">
+                                <img src="/img/icon1.jpg" alt="icon1" class="img-fluid">
+                                <p class="fs-5">Generate card with your music</p>
+                            </div>
                         </div>
                         <div class="col-md-4">
-                            Find your best tracks
+                            <div class="service">
+                                <img src="/img/icon2.jpg" alt="icon1" class="img-fluid">
+                                <p class="fs-5">Find your best tracks</p>
+                            </div>
+                            
                         </div>
                         <div class="col-md-4">
-                            Find your top played artists
+                            <div class="service">
+                                <img src="/img/icon3.jpg" alt="icon1" class="img-fluid">
+                                <p class="fs-5">Find your top played artists</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row pt-5 pb-5">
-                <div class="col-md-12">
-                    <h1>How to use it?</h1>
-                    <div class="pt-3"></div>
-                    <p>To use this tool is very simple, you just need to:</p>
-                    <ul class="custom-list">
-                        <li>Login using your Spotify accounts</li>
-                        <li>Select the time frame activity</li>
-                        <li>Select the background and font as you wish</li>
-                        <li>Done, your menu is ready</li>                        
-                    </ul>
-                    <p>Don't forget to share it with your friends!</p>
+        </div>
+        <div class="container-fluid grey-bg">
+            <div class="container">
+                <div class="row section-start">
+                    <div class="col-md-12">
+                        <h1>How to create a card?</h1>
+                        <div class="pt-3"></div>
+                        <p>To use this tool is very simple, you just need to:</p>
+                        <ul class="custom-list">
+                            <li>Login using your Spotify accounts.</li>
+                            <li>Select the time frame activity.</li>
+                            <li>Select the template.</li>
+                            <li>Click generate.</li>
+                            <li>Done, your menu is ready.</li>                        
+                        </ul>
+                        <p>You can save it as image by clicking the download button.</p>
+                        <p>Don't forget to share it with your friends!</p>
+                    </div>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="container-fluid" style="background-color:#e7e7e7">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center pt-3 pb-3">
+                        <p class="mb-0">&copy; Copyright by Styles77</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -57,5 +82,15 @@
 </script>
 
 <style scoped>
-
+    .grey-bg {
+        background-color: #edededbd!important;
+        background-image: url(/img/bg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;    
+    }
+    .service img {
+        max-width: 240px;
+        margin-bottom: 29px;
+    }
 </style>
