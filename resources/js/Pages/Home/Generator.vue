@@ -91,6 +91,7 @@ export default {
                     time_range: time_range,
                     template: template,
                 })
+                
             }
 
         }

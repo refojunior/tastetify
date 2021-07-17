@@ -1,7 +1,7 @@
 <template>
     <div class="template-2 overflow-hidden">
         <div>
-            <!-- <div v-if="content" class="content-loading"></div> -->
+            <div v-if="content" class="content-loading"></div>
         </div>
         <div class="container-box" v-if="content" ref="screenshot" id="capture">
             <div class="p-3">

@@ -62,8 +62,7 @@ export default {
         }
     },
     methods: {
-        async screenshot() {     
-            window.scrollTo(0, this.$refs.screenshot.offsetHeight - window.innerHeight);
+        async screenshot() {
             const opts = {
                 useCORS: true
             }
