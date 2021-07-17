@@ -169,8 +169,8 @@ h2 {
     color: #444444;
 }
 .container-box {
-    width: 500px;
-    height: 899px;
+    width: 500px!important;
+    height: 899px!important;
     background-color: red;
     background-image: url('/img/paper_bg.jpg');
     background-size: cover;
