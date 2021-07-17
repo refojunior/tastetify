@@ -15,9 +15,9 @@ class CreateGeneratedTable extends Migration
     {
         Schema::create('generated', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('spotify_id');
+            $table->string('spotify_id');
             $table->string('time_range');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

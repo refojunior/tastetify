@@ -10,7 +10,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item">
 
-              <inertia-link  v-if="user.length != 0" class="nav-link" href="/generator" @click.prevent="menuToggle();">Generate Your Menu</inertia-link>
+              <inertia-link  v-if="user.length != 0" class="nav-link" href="/generator" @click.prevent="menuToggle();">Generate Card</inertia-link>
               <a class="nav-link" href="/generator" v-else>Generate Your Menu</a>
             </li>
             <li class="nav-item">

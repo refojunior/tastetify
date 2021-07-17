@@ -58,16 +58,26 @@
 <script>
     import LayoutApp from '../../Layouts/App.vue'
     import Banner from '../../Components/Banner.vue'
+    import Swal from 'sweetalert2'
     
     export default {
         //layout
         layout: LayoutApp,
         props: {
-            user: Array
+            user: Array,
         },
         components: {
             Banner
         },
+        mounted(){
+            Swal.fire({
+            title: 'Greetings!',
+            html: 'Before you start, make sure you already informed your Spotify email address, so I added your email to the white list. <br><br> if you haven\'t told me, just email me right away at liesbutterfly@gmail.com :)',
+            imageUrl: '/img/icon4.png',
+            imageHeight: 85,
+            confirmButtonText: 'Cool'
+            }) 
+        }
     }
 </script>
 

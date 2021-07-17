@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +30,12 @@ class AppServiceProvider extends ServiceProvider
             $this->app['request']->server->set('HTTPS', true);
             URL::forceScheme('https');
         }
+
+        Inertia::share('flash', function () {
+            return [
+                'success' => Session::get('success'),
+                'error' => Session::get('error'),
+            ];
+        });
     }
 }

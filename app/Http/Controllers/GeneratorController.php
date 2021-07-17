@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Generated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -30,7 +31,7 @@ class GeneratorController extends Controller
 
         if(isset($spotify['error'])){
             Auth::logout();
-            return redirect('/')->with('message', 'Something went wrong, please try again');
+            return redirect('/')->with('error', 'Oops, your Spotify session has expired! Don\'t worry just try it again :)');
         }
 
         if($request->time_range == 'long_term') {
@@ -71,6 +72,12 @@ class GeneratorController extends Controller
             }
         }
 
+        Generated::create([
+            'spotify_id' => $user->spotify_id,
+            'time_range' => $request->time_range,
+            'image' => 'unknown',
+        ]);
+
         if($request->template == 'template_1') {
             if(count($images) > 3) {
                 $images = array_slice($images, 0, 3);
@@ -86,6 +93,15 @@ class GeneratorController extends Controller
 
         if($request->template == 'template_2') {
             return Inertia::render('Home/Templates/Template2', [
+                'user' => $user,
+                'tracks' => $formatted,
+                'images' => $images,
+                'time_frame' => $time_frame,
+            ]);
+        }
+
+        if($request->template == 'template_3') {
+            return Inertia::render('Home/Templates/Template3', [
                 'user' => $user,
                 'tracks' => $formatted,
                 'images' => $images,
