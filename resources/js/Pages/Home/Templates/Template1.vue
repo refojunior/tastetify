@@ -32,8 +32,10 @@
         </div>
 
         <div v-if="!content" class="html2canvas-container text-center mb-5">
-            <img :src="screenshotImage" class="img img-fluid d-block" id="canvasRendered">
-            <a @click.prevent="downloadImage" class="btn btn-outline-primary mt-3 download" id="download">Save as image</a>
+            <div class="canvas-content">
+                <img :src="screenshotImage" class="img img-fluid d-block" >
+                <a @click.prevent="downloadImage" class="btn btn-outline-primary mt-3 download" id="download">Save as image</a>
+            </div>
         </div>
 
     </div>
@@ -73,7 +75,7 @@ export default {
 
         },
         downloadImage() {
-            download(this.screenshotImage, 'Testefy', 'image/png');
+            download(this.screenshotImage, 'Testetify', 'image/png');
         }
 
     },
@@ -153,5 +155,12 @@ p.footer {
     font-size: 12px;
 }
 
+.canvas-content {
+    padding: 25px;
+}
+.canvas-content img {
+    width: 88%;
+    margin: auto;
+}
 
 </style>
