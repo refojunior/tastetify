@@ -31,9 +31,9 @@
             </div>
         </div>
 
-        <div class="html2canvas-container text-center mb-5">
-            <div id="canvasRendered"></div>
-            <a download="" href="" class="btn btn-outline-primary mt-3 download" id="download">Save as image</a>
+        <div v-if="!content" class="html2canvas-container text-center mb-5">
+            <img :src="screenshotImage" class="img img-fluid d-block" id="canvasRendered">
+            <a @click.prevent="downloadImage" class="btn btn-outline-primary mt-3 download" id="download">Save as image</a>
         </div>
 
     </div>
@@ -42,7 +42,8 @@
 <script>
 
 
-import html2canvas from 'html2canvas'
+import html2canvas from 'html2canvas';
+import download from 'downloadjs';
 
 export default {
     props: {
@@ -59,7 +60,8 @@ export default {
         }
     },
     methods: {
-        async screenshot() {            
+        async screenshot() {     
+            window.scrollTo(0, this.$refs.screenshot.offsetHeight - window.innerHeight);
             const opts = {
                 useCORS: true
             }
@@ -68,15 +70,17 @@ export default {
             
             this.screenshotImage = canvas.toDataURL('image/jpg')
             this.content = false
-            document.getElementById('canvasRendered').append(canvas)
-            let download_btn = document.getElementById('download')
-            download_btn.setAttribute('href', canvas.toDataURL())
-            download_btn.setAttribute('download', 'Tastetify.png')
+
+        },
+        downloadImage() {
+            download(this.screenshotImage, 'Testefy', 'image/png');
         }
 
     },
     mounted() {
-        this.screenshot()
+        setTimeout(() => {
+            this.screenshot();
+        }, 1000);
     }
 }
 </script>
