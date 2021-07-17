@@ -1,12 +1,12 @@
 <template>
     <div class="template-2 overflow-hidden">
         <div>
-            <!-- <div v-if="content" class="content-loading"></div> -->
+            <div v-if="content" class="content-loading"></div>
         </div>
-        <div class="container-box" ref="screenshot" id="capture">
+        <div class="container-box" v-if="content" ref="screenshot" id="capture">
             <div class="p-3">
                 <div class="header-content">
-                    <h1 class="title mb-0">The tastetify News</h1>
+                    <h1 class="title mb-0"></h1>
                     <hr class="top">
                     <div class="d-flex justify-content-between align-items-center vol">
                         <div>
@@ -162,6 +162,12 @@ h1.title {
     color: #444444;
     white-space: nowrap;
     letter-spacing: -0.2px!important;
+    background-image: url('/img/head-title.png');
+    width: 100%;
+    height: 74px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 h2 {
     font-family: "Bitter";
