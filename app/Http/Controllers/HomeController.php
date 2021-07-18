@@ -44,6 +44,10 @@ class HomeController extends Controller
         $user = Http::withHeaders([
             'Authorization' => 'Bearer '. $activate['access_token'],
         ])->get('https://api.spotify.com/v1/me')->json();
+
+        if($user == null) {
+            return redirect('/')->with('error', 'Oops, looks like your email is not registered to our white list, just tell me your email then you\'ll be able to use this tools :)');
+        }
         
         if(isset($user['error'])){
             dd($user);
@@ -68,12 +72,6 @@ class HomeController extends Controller
         );
         
         Auth::login($spotify);
-
-        // $recently_played = Http::withHeaders([
-        //     'Authorization' => 'Bearer '.$spotify->spotify_token,
-        // ])->get('https://api.spotify.com/v1/me/player/recently-played')->json();
-
-        // dd($recently_played);
 
         return redirect('/generator');
     }
