@@ -14,7 +14,7 @@ class Generated extends Model
     protected $fillable = [
         'spotify_id',
         'time_range',
-        'image',
+        'page',
     ];
 
 }

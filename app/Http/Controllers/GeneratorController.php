@@ -75,7 +75,7 @@ class GeneratorController extends Controller
         Generated::create([
             'spotify_id' => $user->spotify_id,
             'time_range' => $request->time_range,
-            'image' => 'unknown',
+            'page' => 'generator',
         ]);
 
         if($request->template == 'template_1') {
@@ -147,12 +147,66 @@ class GeneratorController extends Controller
             return redirect('/')->with('error', 'Oops, your Spotify session has expired! Don\'t worry just try it again :)');
         }
 
+        Generated::create([
+            'spotify_id' => $user->spotify_id,
+            'time_range' => $time_frame,
+            'page' => 'top-artists',
+        ]);
+
         return Inertia::render('TopArtists/Index', [
             'title' => 'My Top Artists',
             'user' => $user,
             'data' => $spotify['items'],
             'page' => $time_frame,
         ]);
+    }
+
+    public function topTracks(Request $request) {
+        $user = Auth::user();
+
+        if(!isset($request['t'])){
+            $time_frame = 'short_term';
+        } else if ($request['t'] == 'm') {
+            $time_frame = 'medium_term';
+        } else if ($request['t'] == 'l') {
+            $time_frame = 'long_term';
+        }
+
+        $spotify = Http::withHeaders([
+            'Authorization' => 'Bearer '.$user->spotify_token
+        ])->get('https://api.spotify.com/v1/me/top/tracks?time_range='.$time_frame.'&limit=50')->json();
+
+
+        if(isset($spotify['error'])){
+            Auth::logout();
+            return redirect('/')->with('error', 'Oops, your Spotify session has expired! Don\'t worry just try it again :)');
+        }
+
+        $formatted = [];
+
+        foreach($spotify['items'] as $track){               
+            $artist_name = '';
+            foreach($track['artists'] as $artist) {
+                $artist_name .= $artist['name'].', ';
+            }
+            $artist_name = substr($artist_name, 0, -2);
+            $image = $track['album']['images'][0]['url'];
+
+            $formatted[] = [
+                'title' => $track['name'],
+                'duration' => $this->formatDuration((round($track['duration_ms'] / 60000, 2))),
+                'artists' => $artist_name,
+                'image' => $image,
+            ];
+        }
+
+        return Inertia::render('TopTracks/Index', [
+            'title' => 'My Top Tracks',
+            'user' => $user,
+            'data' => $formatted,
+            'page' => $time_frame,
+        ]);
+
     }
 
 }

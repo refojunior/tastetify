@@ -17,7 +17,7 @@ class CreateGeneratedTable extends Migration
             $table->id();
             $table->string('spotify_id');
             $table->string('time_range');
-            $table->string('image')->nullable();
+            $table->string('page')->nullable();
             $table->timestamps();
         });
     }

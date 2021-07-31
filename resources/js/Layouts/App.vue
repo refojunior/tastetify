@@ -12,7 +12,7 @@
               <inertia-link class="nav-link" href="/top-artists" @click.prevent="menuToggle();">Top Artists</inertia-link>            
             </li>
             <li class="nav-item">
-              <inertia-link class="nav-link" href="/top-tracks" @click.prevent="menuToggle();">Top Artists</inertia-link>
+              <inertia-link class="nav-link" href="/top-tracks" @click.prevent="menuToggle();">Top Tracks</inertia-link>
             </li>
             <li class="nav-item">
               <inertia-link class="nav-link" href="/generator" @click.prevent="menuToggle();">Generate Card</inertia-link>

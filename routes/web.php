@@ -25,4 +25,7 @@ Route::post('/generator', [\App\Http\Controllers\GeneratorController::class, 'do
 //top artists
 Route::get('/top-artists', [\App\Http\Controllers\GeneratorController::class, 'topArtists'])->middleware('auth');
 
+//top tracks 
+Route::get('/top-tracks', [\App\Http\Controllers\GeneratorController::class, 'topTracks'])->middleware('auth');
+
 Route::post('/logout', [\App\Http\Controllers\HomeController::class, 'logout']);
