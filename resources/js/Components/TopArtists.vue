@@ -1,6 +1,6 @@
 <template>
     <div class="row mt-4">
-        <div class="col-4 mb-4" v-for="(row, index) in data" :key="index">
+        <div class="col-4 mb-4 custom-spacing" v-for="(row, index) in data" :key="index">
             <div class="card">
                 <img :src="row.images[1]['url']" class="card-img-top card-image" alt="">
                 <div class="card-body">
@@ -18,3 +18,18 @@ export default {
     }
 }    
 </script>
+
+<style scoped>
+@media screen and (max-width:576px) {
+    .custom-spacing {
+        padding:2px;
+        margin-bottom:4px!important;
+    }
+    .custom-spacing img{
+        height: 28.5vw;
+    }
+    .custom-spacing .card-body {
+        padding:7px;
+    }
+}
+</style>
