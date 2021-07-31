@@ -44,7 +44,7 @@
                             <li>Select the time frame activity.</li>
                             <li>Select the template.</li>
                             <li>Click generate.</li>
-                            <li>Done, your menu is ready.</li>                        
+                            <li>Done, your card is ready.</li>                        
                         </ul>
                         <p>You can save it as image by clicking the download button.</p>
                         <p>Don't forget to share it with your friends!</p>

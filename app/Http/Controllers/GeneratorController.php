@@ -200,6 +200,12 @@ class GeneratorController extends Controller
             ];
         }
 
+        Generated::create([
+            'spotify_id' => $user->spotify_id,
+            'time_range' => $time_frame,
+            'page' => 'top-tracks',
+        ]);
+
         return Inertia::render('TopTracks/Index', [
             'title' => 'My Top Tracks',
             'user' => $user,
