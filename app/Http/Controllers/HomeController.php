@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -21,7 +22,7 @@ class HomeController extends Controller
 
     public function login() {
         if(Auth::check()){
-            return redirect('/generator');
+            return redirect('/');
         }
         
         $scopes = 'user-read-private user-read-email user-top-read user-read-recently-played';
@@ -73,7 +74,7 @@ class HomeController extends Controller
         
         Auth::login($spotify);
 
-        return redirect('/generator');
+        return redirect()->intended();
     }
 
     public function logout(){

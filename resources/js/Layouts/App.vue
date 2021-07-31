@@ -7,14 +7,30 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" :class="[menuOpen == false ? 'd-none' : 'd-block']" id="navbarCollapse">
-          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0" v-if="user.length != 0" >
             <li class="nav-item">
-
-              <inertia-link  v-if="user.length != 0" class="nav-link" href="/generator" @click.prevent="menuToggle();">Generate Card</inertia-link>
-              <a class="nav-link" href="/generator" v-else>Generate Your Menu</a>
+              <inertia-link class="nav-link" href="/top-artists" @click.prevent="menuToggle();">Top Artists</inertia-link>            
+            </li>
+            <li class="nav-item">
+              <inertia-link class="nav-link" href="/top-tracks" @click.prevent="menuToggle();">Top Artists</inertia-link>
+            </li>
+            <li class="nav-item">
+              <inertia-link class="nav-link" href="/generator" @click.prevent="menuToggle();">Generate Card</inertia-link>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link"  v-if="user.length != 0" @click.prevent="logout(); menuToggle()">Logout</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0" v-else>
+            <li class="nav-item" >
+              <a class="nav-link" href="/top-artists">Top Artists</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="/top-tracks">Top Tracks</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="/generator">Generate Card</a>
             </li>
           </ul>
         </div>

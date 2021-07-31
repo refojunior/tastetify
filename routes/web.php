@@ -22,6 +22,7 @@ Route::get('/spotify', [\App\Http\Controllers\HomeController::class, 'spotify'])
 Route::get('/generator', [\App\Http\Controllers\GeneratorController::class, 'generate'])->middleware('auth');
 Route::post('/generator', [\App\Http\Controllers\GeneratorController::class, 'doGenerate'])->middleware('auth');
 
-Route::post('/logout', [\App\Http\Controllers\HomeController::class, 'logout']);
+//top artists
+Route::get('/top-artists', [\App\Http\Controllers\GeneratorController::class, 'topArtists'])->middleware('auth');
 
-Route::resource('/posts', \App\Http\Controllers\PostController::class);
+Route::post('/logout', [\App\Http\Controllers\HomeController::class, 'logout']);

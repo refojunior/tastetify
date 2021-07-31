@@ -125,4 +125,34 @@ class GeneratorController extends Controller
 
         return $duration;
     }
+
+    public function topArtists(Request $request) {
+        $user = Auth::user();
+
+        if(!isset($request['t'])){
+            $time_frame = 'short_term';
+        } else if ($request['t'] == 'm') {
+            $time_frame = 'medium_term';
+        } else if ($request['t'] == 'l') {
+            $time_frame = 'long_term';
+        }
+
+        $spotify = Http::withHeaders([
+            'Authorization' => 'Bearer '.$user->spotify_token
+        ])->get('https://api.spotify.com/v1/me/top/artists?time_range='.$time_frame.'&limit=50')->json();
+
+
+        if(isset($spotify['error'])){
+            Auth::logout();
+            return redirect('/')->with('error', 'Oops, your Spotify session has expired! Don\'t worry just try it again :)');
+        }
+
+        return Inertia::render('TopArtists/Index', [
+            'title' => 'My Top Artists',
+            'user' => $user,
+            'data' => $spotify['items'],
+            'page' => $time_frame,
+        ]);
+    }
+
 }

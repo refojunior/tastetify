@@ -93,3 +93,21 @@ footer {
     padding-top: 5em;
     padding-bottom: 5em;
 }
+
+.card-image {
+    height: 22.5vw;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 15px;
+}
+
+@media screen and (max-width:576px) {
+    .card-title {
+        font-size: 13px;
+    }
+    .card-body {
+        padding: 10px;
+    }
+}
