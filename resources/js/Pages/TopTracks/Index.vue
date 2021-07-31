@@ -13,8 +13,8 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-">
+            <div class="row" style="margin-top:15px">
+                <div class="col">
                     <ol class="list-group list-group-numbered">
                         <li class="list-group-item d-flex justify-content-between align-items-start li-custom" v-for="(row, index) in data" :key="index" v-bind:style="{ backgroundImage: 'url(' + row.image + ')'  }">
                             <div class="me-auto m-custom">
