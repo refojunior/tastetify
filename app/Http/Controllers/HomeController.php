@@ -49,7 +49,7 @@ class HomeController extends Controller
         ])->get('https://api.spotify.com/v1/me')->json();
 
         if($user == null) {
-            return redirect('/')->with('error', 'Oops, looks like your email is not registered to our white list, just tell me your email then you\'ll be able to use this tools :)');
+            return redirect('/')->with('error', 'Oops, something went wrong. If you already put your Spotify email please wait a few minutes, if not please put your Spotify email first by refreshing this page:)');
         }
         
         if(isset($user['error'])){

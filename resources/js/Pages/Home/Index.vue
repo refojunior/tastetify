@@ -59,8 +59,8 @@
     import LayoutApp from '../../Layouts/App.vue'
     import Banner from '../../Components/Banner.vue'
     import Swal from 'sweetalert2'
-    import { Inertia } from '@inertiajs/inertia'
     import axios from 'axios'
+    import { usePage } from '@inertiajs/inertia-vue3'
     
     export default {
         //layout
@@ -77,22 +77,24 @@
             Banner
         },
         async mounted(){
-            const { value: email } = await Swal.fire({
-                title: 'Greetings!',
-                html: 'Before you start, please put your email here to be added to the whitelist, if you have already done so, just ignore this message :)',
-                imageUrl: '/img/icon4.png',
-                imageHeight: 85,
-                showCancelButton: true,
-                confirmButtonText: 'Done',
-
-                input: 'email',
-                inputLabel: 'Your email address',
-                inputPlaceholder: 'Enter your email address'
-            })
-
-            if (email) {
-                this.email = email
-                this.addEmail(this.email)
+            if(usePage().props.value.flash.error == null){
+                const { value: email } = await Swal.fire({
+                    title: 'Greetings!',
+                    html: 'Before you start, please put your Spotify email here to be added to the white-list, if you have already done so, just ignore this message :)',
+                    imageUrl: '/img/icon4.png',
+                    imageHeight: 85,
+                    showCancelButton: true,
+                    confirmButtonText: 'Done',
+    
+                    input: 'email',
+                    inputLabel: 'Your Spotify email',
+                    inputPlaceholder: 'Enter your Spotify email address'
+                })
+    
+                if (email) {
+                    this.email = email
+                    this.addEmail(this.email)
+                }
             }
         },
         setup() {
@@ -108,13 +110,13 @@
                     if(res.data == 1){
                         Swal.fire(
                             'Success!',
-                            'Your email has been added to our white-list.',
+                            'Your Spotify email has been added to our white-list.',
                             'success'
                         )
                     } else {
                         Swal.fire(
                             'Hold on!',
-                            'Your email already registered to our white-list, just wait a few minutes :)',
+                            'Your Spotify email already registered to our white-list, just wait a few minutes :)',
                             'info'
                         )
                     }
