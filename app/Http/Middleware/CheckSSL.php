@@ -24,7 +24,7 @@ class CheckSSL
                 return $next($request);
             }
             else {
-                redirect(env('APP_URL').$request->path());
+                return redirect(env('APP_URL').$request->path());
             }
         } else {
             return $next($request);
