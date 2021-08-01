@@ -17,10 +17,13 @@ class CheckSSL
     public function handle(Request $request, Closure $next)
     {
         if(env('APP_ENV', 'local') != 'local'){
-            if (strpos(request()->fullUrl(), 'http://') !== false || strpos(request()->fullUrl(), 'https://') !== true) {
+            if (strpos(request()->fullUrl(), 'https://') == false) {
                 return redirect(str_replace('http://', 'https://', request()->fullUrl()));
+            } else {
+                return $next($request);
             }
-        }
-        return $next($request);
+        } else {
+            return $next($request);
+        }  
     }
 }
