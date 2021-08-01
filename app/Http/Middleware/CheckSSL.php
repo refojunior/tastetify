@@ -16,9 +16,9 @@ class CheckSSL
      */
     public function handle(Request $request, Closure $next)
     {
-        if(env('APP_ENV', 'local') != 'local'){
-            if (strpos(request()->fullUrl(), 'https://') == false) {
-                return redirect(str_replace('http://', 'https://', request()->fullUrl()));
+        if(env('APP_ENV', 'local') != 'local'){            
+            if (strpos(request()->fullUrl(), 'https://') != 0) {                
+                return redirect(env('APP_URL').$request->path());
             } else {
                 return $next($request);
             }
