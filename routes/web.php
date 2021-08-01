@@ -28,4 +28,7 @@ Route::get('/top-artists', [\App\Http\Controllers\GeneratorController::class, 't
 //top tracks 
 Route::get('/top-tracks', [\App\Http\Controllers\GeneratorController::class, 'topTracks'])->middleware('auth');
 
+//add email 
+Route::post('/add-email', [\App\Http\Controllers\HomeController::class, 'addEmail']);
+
 Route::post('/logout', [\App\Http\Controllers\HomeController::class, 'logout']);

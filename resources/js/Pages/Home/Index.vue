@@ -59,6 +59,8 @@
     import LayoutApp from '../../Layouts/App.vue'
     import Banner from '../../Components/Banner.vue'
     import Swal from 'sweetalert2'
+    import { Inertia } from '@inertiajs/inertia'
+    import axios from 'axios'
     
     export default {
         //layout
@@ -66,17 +68,63 @@
         props: {
             user: Array,
         },
+        data() {
+            return {
+                email: "",
+            }
+        },
         components: {
             Banner
         },
-        mounted(){
-            Swal.fire({
-            title: 'Greetings!',
-            html: 'Before you start, make sure you already informed your Spotify email address, so I added your email to the white list. <br><br> if you haven\'t told me, just email me right away at liesbutterfly@gmail.com :)',
-            imageUrl: '/img/icon4.png',
-            imageHeight: 85,
-            confirmButtonText: 'Cool'
-            }) 
+        async mounted(){
+            const { value: email } = await Swal.fire({
+                title: 'Greetings!',
+                html: 'Before you start, please put your email here to be added to the whitelist, if you have already done so, just ignore this message :)',
+                imageUrl: '/img/icon4.png',
+                imageHeight: 85,
+                showCancelButton: true,
+                confirmButtonText: 'Done',
+
+                input: 'email',
+                inputLabel: 'Your email address',
+                inputPlaceholder: 'Enter your email address'
+            })
+
+            if (email) {
+                this.email = email
+                this.addEmail(this.email)
+            }
+        },
+        setup() {
+            function addEmail(email) {
+                
+                axios({
+                    method: 'post',
+                    url: '/add-email',
+                    data: {
+                        email: email,
+                    }
+                }).then(res => {
+                    if(res.data == 1){
+                        Swal.fire(
+                            'Success!',
+                            'Your email has been added to our white-list.',
+                            'success'
+                        )
+                    } else {
+                        Swal.fire(
+                            'Hold on!',
+                            'Your email already registered to our white-list, just wait a few minutes :)',
+                            'info'
+                        )
+                    }
+                })
+
+            }
+
+            return {
+                addEmail
+            }
         }
     }
 </script>

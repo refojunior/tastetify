@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendRegisteredUser;
 use App\Models\User;
-use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -81,5 +83,26 @@ class HomeController extends Controller
         Auth::logout();
 
         return redirect('/');
+    }
+
+    public function addEmail(Request $request) {
+        $request->validate([
+            'email' => 'email:rfc,dns'
+        ]);
+        
+        $whitelist = DB::table('whitelists')->where('email', $request->email)->first();
+
+        if($whitelist == null) {
+            DB::table('whitelists')->insert([
+                'email' => $request->email,
+                'status' => 0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            Mail::to('liesbutterfly@gmail.com')->send(new SendRegisteredUser($request->email));
+            return true;
+        } else {
+            return false;
+        }
     }
 }
