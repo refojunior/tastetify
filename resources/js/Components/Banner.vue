@@ -1,18 +1,19 @@
 <template>
     <div class="container-fluid p-0 banner-container">
-        <div class="px-4 text-left banner">
+        <div class="px-4 text-left banner position-relative overflow-hidden">
+            <div class="ellipse-1"></div>
             <div class="container">
                 <div class="row flex-lg align-items-center g-5 py-5">                    
                     <div class="col-lg-12 text-center">
-                        <h1 class="display-5 fw-bold lh-1 mb-3">Tastetify</h1>
-                        <p class="lead">Generate a cool card with several templates or get to know your most played songs or artists in Spotify!</p>
+                        <h1>Generate a cool card with several templates or get to know your most played songs or artists in Spotify!</h1>
                         <div class="d-grid gap-2 d-md-flex justify-content-center">
-                            <a v-if="user.length == 0" href="/login" class="btn btn-success px-4 me-md-2">Create your own</a>
-                            <inertia-link v-else href="/generator" class="btn btn-success px-4 me-md-2">Create your own</inertia-link>
+                            <a v-if="user.length == 0" href="/login" class="btn btn-tastetify p-tastetify font-weight-bold me-md-2">CREATE YOUR OWN</a>
+                            <inertia-link v-else href="/generator" class="btn btn-tastetify p-tastetify font-weight-bold me-md-2">CREATE YOUR OWN</inertia-link>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="ellipse-2"></div>
         </div>
     </div>
 </template>
@@ -28,29 +29,35 @@ export default {
 }
 </script>
 <style scoped>
-    .lead {
-        max-width: 620px;
+    h1 {
+        color: #fff;
         margin: auto;
         margin-bottom: 20px;
-        text-shadow:
-        -1px -1px 0 #fff,  
-            1px -1px 0 #fff,
-            -1px 1px 0 #fff,
-            1px 1px 0 #fff;
+        font-size: 48px;
+        font-weight: 500;
     }
     .banner {
-        background-image: url('/img/banner.jpg');
+        background-image: url('/img/banner.png');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        padding-top: 15rem;
+        padding-top: 25rem;
         padding-bottom: 15rem;
+    }
+
+    .btn {
+        margin-top: 50px;
     }
 
     @media screen and (max-width: 767px) {
         .banner {
             padding: 0;
-            margin-top: 128px;
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 24px;
+            line-height: 140%;
         }
     }
 </style>

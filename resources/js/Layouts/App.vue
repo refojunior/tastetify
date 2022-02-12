@@ -2,7 +2,9 @@
   <div class="page">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
       <div class="container">
-        <inertia-link class="navbar-brand" href="/" @click.prevent="menuToggle()">Tastetify</inertia-link>
+        <inertia-link class="navbar-brand" href="/" @click.prevent="menuToggle()">
+          <img src="img/logo.png" alt="Logo">
+        </inertia-link>
         <button class="navbar-toggler" type="button" @click.prevent="menuToggle()" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,8 +25,8 @@
           </ul>
 
           <ul class="navbar-nav ms-auto mb-2 mb-md-0" v-else>
-            <li class="nav-item" >
-              <a class="nav-link" href="/top-artists">Top Artists</a>
+            <li class="nav-item">
+              <a class="nav-link primary-color" href="/top-artists">Top Artists</a>
             </li>
             <li class="nav-item" >
               <a class="nav-link" href="/top-tracks">Top Tracks</a>

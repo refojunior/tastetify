@@ -28,7 +28,7 @@
     <meta property="og:image" content="https://tastetify.herokuapp.com/img/banner-meta.jpg" />
   
   </head>
-  <body>
+  <body class="tastetify-bg-dark overflow-y-hidden">
       @inertia
   </body>
 </html>
