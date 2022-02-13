@@ -10,15 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid" style="background-color:#dbdbdb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center pt-3 pb-3">
-                        <p class="mb-0" style="font-size:12px">&copy; Copyright by Styles77</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </footer>
 </template>
 
