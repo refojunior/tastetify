@@ -3,6 +3,7 @@
         <Banner :user="user" />
 
         <div class="container-fluid tastetify-bg-blank position-relative overflow-hidden">
+            <div class="ellipse-3"></div>
             <div class="container">
                 <div class="row section-start">
                     <div class="col-md-12 text-center">
@@ -30,7 +31,6 @@
                     </div>
                 </div>
             </div>
-            <div class="ellipse-3"></div>
         </div>
         <div class="container-fluid tastetify-bg-dark">
             <div class="container">

@@ -41,7 +41,7 @@ body .tastetify-primary-color {
 .content-loading {
     width: 100%;
     height: 100%;
-    background-color: #F1F2F3;
+    background-color: #121212;
     position: fixed;
     z-index: 2;
     background-image: url('/img/loading.gif');
@@ -80,7 +80,7 @@ h6 {
 }
 
 .boxes {
-    border: 1px solid #bfbfbf;
+    background-color: #1E1E1E;
     height: 7rem;
     position: relative;
     cursor: pointer;
@@ -89,7 +89,7 @@ h6 {
 }
 
 .boxes:hover, .boxes.focus {
-    background-color: #f3f3f3;
+    border: 1px solid #32C4A9;
 }
 
 .boxes span {
@@ -237,4 +237,8 @@ footer {
         padding:3px;
         border-radius: 8px;
     }
+}
+
+.tastetify-text-color {
+    color: #BFBFBF;
 }

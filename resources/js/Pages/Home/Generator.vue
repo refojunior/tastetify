@@ -1,12 +1,13 @@
 <template>
     <div class="px-4">
-        <div class="container section-start">
+        <div class="ellipse-1"></div>
+        <div class="ellipse-2"></div>
+        <div class="container section-start" style="z-index:2">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center">Generate Your Own Menu</h1>
-                    <hr>
+                <div class="col-md-12 mb-4">
+                    <h1 class="text-center text-white mt-4 mb-5">Generate Your Card</h1>
                 </div>
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center tastetify-text-color">
                     <h4>Choose your timeframe:</h4>
                     <div class="row mt-5">
                         <div class="col-4">
@@ -50,7 +51,7 @@
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <button @click.prevent="generateContent(time_range, template)" class="btn btn-primary">Start Generate</button>
+                        <button @click.prevent="generateContent(time_range, template)" class="btn btn-tastetify p-tastetify">START GENERATE</button>
                     </div>
                 </div>
             </div>
