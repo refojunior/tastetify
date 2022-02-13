@@ -19748,54 +19748,57 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_4 = {
-  "class": "container"
-};
-var _hoisted_5 = {
-  "class": "row flex-lg align-items-center g-5 py-5"
-};
-var _hoisted_6 = {
-  "class": "col-lg-12 text-center"
-};
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Generate a cool card with several templates or get to know your most played songs or artists in Spotify!", -1
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "ellipse-2",
+  style: {
+    "z-index": "1"
+  }
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_8 = {
+var _hoisted_5 = {
+  "class": "container"
+};
+var _hoisted_6 = {
+  "class": "row flex-lg align-items-center g-5 py-5"
+};
+var _hoisted_7 = {
+  "class": "col-lg-12 text-center"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Generate a cool card with several templates or get to know your most played songs or artists in Spotify!", -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
   "class": "d-grid gap-2 d-md-flex justify-content-center"
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   key: 0,
   href: "/login",
   "class": "btn btn-tastetify p-tastetify font-weight-bold me-md-2"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("CREATE YOUR OWN");
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "ellipse-2"
-}, null, -1
-/* HOISTED */
-);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("CREATE YOUR OWN");
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [$props.user.length == 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_9, "CREATE YOUR OWN")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_inertia_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [$props.user.length == 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_10, "CREATE YOUR OWN")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_inertia_link, {
     key: 1,
     href: "/generator",
     "class": "btn btn-tastetify p-tastetify font-weight-bold me-md-2"
   }, {
     "default": _withId(function () {
-      return [_hoisted_10];
+      return [_hoisted_11];
     }),
     _: 1
     /* STABLE */
 
-  }))])])])]), _hoisted_11])]);
+  }))])])])])])]);
 });
 
 /***/ }),
@@ -19850,13 +19853,13 @@ var _hoisted_1 = {
   "class": "row mt-4"
 };
 var _hoisted_2 = {
-  "class": "card"
+  "class": "card tastetify-card"
 };
 var _hoisted_3 = {
   "class": "card-body"
 };
 var _hoisted_4 = {
-  "class": "card-title mb-0"
+  "class": "card-title mb-0 text-white"
 };
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
@@ -19864,11 +19867,11 @@ var _hoisted_4 = {
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data, function (row, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
-      "class": "col-4 mb-4 custom-spacing",
+      "class": "col-4 col-md-3 mb-4 custom-spacing",
       key: index
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
       src: row.images[1]['url'],
-      "class": "card-img-top card-image",
+      "class": "card-img-top card-image tastetify-card-img",
       alt: ""
     }, null, 8
     /* PROPS */
@@ -20350,7 +20353,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-f311f62a");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container position-relative overflow-hidden\" data-v-f311f62a><div class=\"row section-start\" data-v-f311f62a><div class=\"col-md-12 text-center\" data-v-f311f62a><h1 class=\"text-white\" data-v-f311f62a>What We Have</h1><p class=\"text-center fs-4 tastetify-primary-color \" data-v-f311f62a>We have some tools that you can use to:</p><div class=\"row inner-content\" data-v-f311f62a><div class=\"col-md-4\" data-v-f311f62a><div class=\"\" data-v-f311f62a><img src=\"/img/service-1.png\" alt=\"icon1\" class=\"img-fluid scaled\" data-v-f311f62a></div></div><div class=\"col-md-4\" data-v-f311f62a><div class=\"\" data-v-f311f62a><img src=\"/img/service-2.png\" alt=\"icon1\" class=\"img-fluid scaled\" data-v-f311f62a></div></div><div class=\"col-md-4\" data-v-f311f62a><div class=\"\" data-v-f311f62a><img src=\"/img/service-3.png\" alt=\"icon1\" class=\"img-fluid scaled\" data-v-f311f62a></div></div></div></div></div><div class=\"ellipse-3\" data-v-f311f62a></div></div><div class=\"container-fluid tastetify-bg-dark\" data-v-f311f62a><div class=\"container\" data-v-f311f62a><div class=\"row section-start\" data-v-f311f62a><div class=\"col-md-12 text-white\" data-v-f311f62a><h1 class=\"text-center\" data-v-f311f62a>How to create a card?</h1><div class=\"pt-2\" data-v-f311f62a></div><p class=\"text-center fs-4 tastetify-primary-color \" data-v-f311f62a>To use this tool is very simple, you just need to:</p><ul class=\"custom-list\" data-v-f311f62a><li data-v-f311f62a>Login using your Spotify accounts.</li><li data-v-f311f62a>Select the time frame activity.</li><li data-v-f311f62a>Select the template.</li><li data-v-f311f62a>Click generate.</li><li data-v-f311f62a>Done, your card is ready.</li></ul><div class=\"text-center mt-3\" data-v-f311f62a><p data-v-f311f62a>Don&#39;t forget to share it with your friends!</p></div></div></div></div></div>", 2);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid tastetify-bg-blank position-relative overflow-hidden\" data-v-f311f62a><div class=\"container\" data-v-f311f62a><div class=\"row section-start\" data-v-f311f62a><div class=\"col-md-12 text-center\" data-v-f311f62a><h1 class=\"text-white\" data-v-f311f62a>What We Have</h1><p class=\"text-center fs-4 tastetify-primary-color \" data-v-f311f62a>We have some tools that you can use to:</p><div class=\"row inner-content\" data-v-f311f62a><div class=\"col-md-4\" data-v-f311f62a><div class=\"\" data-v-f311f62a><img src=\"/img/service-1.png\" alt=\"icon1\" class=\"img-fluid scaled\" data-v-f311f62a></div></div><div class=\"col-md-4\" data-v-f311f62a><div class=\"\" data-v-f311f62a><img src=\"/img/service-2.png\" alt=\"icon1\" class=\"img-fluid scaled\" data-v-f311f62a></div></div><div class=\"col-md-4\" data-v-f311f62a><div class=\"\" data-v-f311f62a><img src=\"/img/service-3.png\" alt=\"icon1\" class=\"img-fluid scaled\" data-v-f311f62a></div></div></div></div></div></div><div class=\"ellipse-3\" data-v-f311f62a></div></div><div class=\"container-fluid tastetify-bg-dark\" data-v-f311f62a><div class=\"container\" data-v-f311f62a><div class=\"row section-start\" data-v-f311f62a><div class=\"col-md-12 text-white\" data-v-f311f62a><h1 class=\"text-center\" data-v-f311f62a>How to create a card?</h1><div class=\"pt-2\" data-v-f311f62a></div><p class=\"text-center fs-4 tastetify-primary-color \" data-v-f311f62a>To use this tool is very simple, you just need to:</p><ul class=\"custom-list\" data-v-f311f62a><li data-v-f311f62a>Login using your Spotify accounts.</li><li data-v-f311f62a>Select the time frame activity.</li><li data-v-f311f62a>Select the template.</li><li data-v-f311f62a>Click generate.</li><li data-v-f311f62a>Done, your card is ready.</li></ul><div class=\"text-center mt-3\" data-v-f311f62a><p data-v-f311f62a>Don&#39;t forget to share it with your friends!</p></div></div></div></div></div>", 2);
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
@@ -21217,47 +21220,61 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "px-4"
 };
-var _hoisted_2 = {
-  "class": "container section-start"
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "ellipse-1"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "ellipse-2"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_4 = {
+  "class": "container section-start",
+  style: {
+    "z-index": "2"
+  }
 };
-var _hoisted_3 = {
+var _hoisted_5 = {
   "class": "row"
 };
-var _hoisted_4 = {
-  "class": "col-md-12"
+var _hoisted_6 = {
+  "class": "col-md-12 mb-4"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", {
-  "class": "text-center"
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", {
+  "class": "text-center text-white mt-4 mb-5"
 }, "Your Top Artists", -1
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
+var _hoisted_8 = {
+  "class": "nav nav-pills nav-fill flex-nowrap tastetify-nav"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "4 WEEKS", -1
 /* HOISTED */
 );
 
-var _hoisted_7 = {
-  "class": "nav nav-pills nav-fill flex-nowrap"
-};
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("SIX MONTHS");
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("4 Weeks");
-
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Six Months");
-
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("All Time");
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("ALL TIME");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
 
   var _component_TopArtists = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TopArtists");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("nav", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("nav", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
     href: "/top-artists",
     "class": ["nav-link p-custom", [$props.page == 'short_term' ? 'active' : '']]
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_8];
+      return [_hoisted_9];
     }),
     _: 1
     /* STABLE */
@@ -21269,7 +21286,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": ["nav-link", [$props.page == 'medium_term' ? 'active' : '']]
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_9];
+      return [_hoisted_10];
     }),
     _: 1
     /* STABLE */
@@ -21281,7 +21298,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": ["nav-link p-custom", [$props.page == 'long_term' ? 'active' : '']]
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_10];
+      return [_hoisted_11];
     }),
     _: 1
     /* STABLE */

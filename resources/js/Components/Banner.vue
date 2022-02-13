@@ -2,6 +2,7 @@
     <div class="container-fluid p-0 banner-container">
         <div class="px-4 text-left banner position-relative overflow-hidden">
             <div class="ellipse-1"></div>
+            <div class="ellipse-2" style="z-index:1"></div>
             <div class="container">
                 <div class="row flex-lg align-items-center g-5 py-5">                    
                     <div class="col-lg-12 text-center">
@@ -13,7 +14,6 @@
                     </div>
                 </div>
             </div>
-            <div class="ellipse-2"></div>
         </div>
     </div>
 </template>

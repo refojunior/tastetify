@@ -2,27 +2,29 @@
     <div>
         <Banner :user="user" />
 
-        <div class="container position-relative overflow-hidden">
-            <div class="row section-start">
-                <div class="col-md-12 text-center">
-                    <h1 class="text-white">What We Have</h1>
-                    <p class="text-center fs-4 tastetify-primary-color ">We have some tools that you can use to:</p>
+        <div class="container-fluid tastetify-bg-blank position-relative overflow-hidden">
+            <div class="container">
+                <div class="row section-start">
+                    <div class="col-md-12 text-center">
+                        <h1 class="text-white">What We Have</h1>
+                        <p class="text-center fs-4 tastetify-primary-color ">We have some tools that you can use to:</p>
 
-                    <div class="row inner-content">
-                        <div class="col-md-4">
-                            <div class="">
-                                <img src="/img/service-1.png" alt="icon1" class="img-fluid scaled">
+                        <div class="row inner-content">
+                            <div class="col-md-4">
+                                <div class="">
+                                    <img src="/img/service-1.png" alt="icon1" class="img-fluid scaled">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="">
-                                <img src="/img/service-2.png" alt="icon1" class="img-fluid scaled">
+                            <div class="col-md-4">
+                                <div class="">
+                                    <img src="/img/service-2.png" alt="icon1" class="img-fluid scaled">
+                                </div>
+                                
                             </div>
-                            
-                        </div>
-                        <div class="col-md-4">
-                            <div class="">
-                                <img src="/img/service-3.png" alt="icon1" class="img-fluid scaled">
+                            <div class="col-md-4">
+                                <div class="">
+                                    <img src="/img/service-3.png" alt="icon1" class="img-fluid scaled">
+                                </div>
                             </div>
                         </div>
                     </div>

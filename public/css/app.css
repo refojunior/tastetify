@@ -28,6 +28,11 @@ body .tastetify-primary-color {
 }
 
 .tastetify-bg-dark {
+    background-color:#121212;
+}
+
+
+.tastetify-bg-blank {
     background-color:#000;
 }
 
@@ -124,6 +129,7 @@ footer {
 .card-image {
     width: 100%;
     height: auto;
+    max-height: 290px;
     -o-object-fit: cover;
        object-fit: cover;
 }
@@ -156,18 +162,18 @@ footer {
     top: 0;
     background: radial-gradient(50% 50% at 50% 50%, rgba(50, 196, 169, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
     transform: rotate(-49.92deg);
-    z-index: 1;
+    z-index: auto;
 }
 
 .ellipse-2 {
     position: absolute;
     width: 1382px;
-    height: 1078px;
-    left: 1846.27px;
+    height: 1078px;    
+    right: -841px;
     top: 0;
     background: radial-gradient(50% 50% at 50% 50%, rgba(68, 136, 255, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
     transform: rotate(75deg);
-    z-index: 1;
+    z-index: -1;
 }
 .ellipse-3 {
     position: absolute;
@@ -177,10 +183,57 @@ footer {
     top: 310px;
     background: radial-gradient(50% 50% at 50% 50%, rgba(50, 196, 169, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
     transform: rotate(0.04deg);
-    z-index: -1;
+    z-index: auto;
 }
 
 
 .overflow-x-hidden {
     overflow-x: hidden;
+}
+
+.tastetify-nav .nav-link {
+    color: #BFBFBF;
+}
+
+.tastetify-nav .nav-link.active {
+    position: relative;
+    background: transparent;
+    z-index: -1;
+    color: #32C4A9;
+}
+
+.tastetify-nav .nav-link.active span {
+    z-index: 2;
+}
+
+.tastetify-nav .nav-link.active:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(84.08deg, #32C4A9 42.66%, #4488FF 131.2%);
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+}
+
+.tastetify-card {
+    background-color: #1E1E1E;
+    border: 0;
+    border-radius: 16px;
+    padding: 9px;
+}
+.tastetify-card-img {
+    padding:7px;
+    border-radius: 16px;
+}
+
+@media screen and (max-width:576px) {
+    .tastetify-card {
+        padding: 3px;
+        border-radius: 8px;
+    }
+    .tastetify-card-img {
+        padding:3px;
+        border-radius: 8px;
+    }
 }
