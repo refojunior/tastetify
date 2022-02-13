@@ -27,7 +27,7 @@ class HomeController extends Controller
             return redirect('/');
         }
         
-        $scopes = 'user-read-private user-read-email user-top-read user-read-recently-played';
+        $scopes = 'user-read-email user-top-read user-read-recently-played';
         $redirect_uri = url('/').env('SPOTIFY_REDIRECT_URI');
      
         return redirect('https://accounts.spotify.com/authorize?response_type=code&client_id='.env('SPOTIFY_CLIENT_ID').'&scope='.urlencode($scopes).'&redirect_uri='.$redirect_uri);    
